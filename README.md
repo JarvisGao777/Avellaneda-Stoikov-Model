@@ -21,7 +21,7 @@ Key observations: The paper's table shows fixed spreads for both strategies (equ
 Result: The fixed-spread approach yields results more consistent with the paper.
 
 ![figure](https://github.com/user-attachments/assets/5fdd9c4a-59a8-4284-96dd-298750f310a2)
-![table](https://github.com/user-attachments/assets/8c311e1f-c516-41f1-b8e9-be41f1fc33a0)
+![table](https://github.com/user-attachments/assets/57904e1b-2e4f-4761-adf1-f519e2e37cc0)
 
 ### Future Rearch 1: Parmeter Estimation
 The current model relies on predefined parameters derived from an idealized mathematical framework. However, real-world market microstructure may deviate from these assumptions, and esimation errors could significantly impact model performance.
