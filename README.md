@@ -1,13 +1,33 @@
 # Avellaneda-Stoikov-Model
 
-I recreate the result of the paper 'High-frequency trading in a limite order book' here.
+## Replicationof High-Frequency Trading in a Limit Order Book
+This repository cotains my implementation of the model from the paper High-Frequency Trading in a Limit Order Book.
 
-I uploaded three pdfs in the repository, they the 1st editon of the paper, the 2nd edition of the paper and a PPT with detailed mathematical proof of the model.
-Note that all three pdfs have some mathematical errors during the proof, I recommend the PPT because it's the most detailed and only lost a denominator of 2 in the middle of equation (21) and (22)
+### Resources
+Three PDFs are provided for reference:
+1. The 1st edition of the paper
+2. The 2nd edition of the paper
+3. A PPT with detailed mathematical derivations
+Note on discrepencies: All three documents contain minor mathematical errors in the proofs. The PPT is the most comprehensive but omits a denominator of 2 in equations (21) and (22).
 
-In the paper, the authors compared two strategies: inventory strategy and symmetric strategy. The authors said that the symmetric strategy used the same spread as the inventory strategy, but centers it around the mid-price rather than the reservation price
-However, in the table the spreads are all fixed and they are equal to the second part of the spread equation
-So I code two ways: both inventory and symmetric strategy's spread are dynamic but they centered around reservation price and mid-price respectivelly, the other way is that inventory strategy's spread is dynamic but symmetric strategy's spread is fixed (which only depends on gamma and k)
-Throught the result, we can see that the result of fixed spread is more similar to the result in the paper.
+### Strategy Implementation
+The paper compares two strategies:
+1. Inventory Strategy: Spread is dynamic and decreasing and centered around the reservation price.
+2. Symmetric Strategy: Described as using the same spread as the inventory strategy but centered around the mid_price instead.
+Key observations: The paper's table shows fixed spreads for both strategies (equal to the second term of the spread equation). To reconcile this, I tested two approaches:
+1. Dynamic spreads: Inventory strategy (reservation price-centered) vs symmetric strategy (mid-price centered).
+2. Fixed spread for symmetric strategy: Only depends on gamma and k.
+Result: The fixed-spread approach yields results more consistent with the paper.
 
-Future research: How will latency affect the model? current model assumes no latency, the price/inventory we get is the current value and our order will be sent immediately to the exchange.
+### Future Rearch 1: Parmeter Estimation
+The current model relies on predefined parameters derived from an idealized mathematical framework. However, real-world market microstructure may deviate from these assumptions, and esimation errors could significantly impact model performance.
+Key considerations includes:
+1. ​Empirical calibration: Estimating parameters (e.g., order arrival rates, volatility) from actual market data to better reflect observed dynamics.
+2. ​Robustness testing: Quantifying how model performance degrades under parameter misspecification or noisy estimates.
+3. ​Adaptive strategies: Developing methods to dynamically adjust parameters in response to changing market conditions.
+
+### Future Rearch 2: Latency Effects
+The current model assumes zero latency--orders are executed immediately with the perfect price/inventory visiblily. A natural extension would be to study how latency impacts strategy performance, including:
+1. Delays in price updates or order execution.
+2. Effects on inventory management and spread adjustments.
+
