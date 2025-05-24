@@ -14,6 +14,7 @@ Note on discrepencies: All three documents contain minor mathematical errors in 
 The paper compares two strategies:
 1. Inventory Strategy: Spread is dynamic and decreasing and centered around the reservation price.
 2. Symmetric Strategy: Described as using the same spread as the inventory strategy but centered around the mid_price instead.
+
 Key observations: The paper's table shows fixed spreads for both strategies (equal to the second term of the spread equation). To reconcile this, I tested two approaches:
 1. Dynamic spreads: Inventory strategy (reservation price-centered) vs symmetric strategy (mid-price centered).
 2. Fixed spread for symmetric strategy: Only depends on gamma and k.
