@@ -17,7 +17,8 @@ The paper compares two strategies:
 
 Key observations: The paper's table shows fixed spreads for both strategies (equal to the second term of the spread equation). To reconcile this, I tested two approaches:
 1. Dynamic spreads: Inventory strategy (reservation price-centered) vs symmetric strategy (mid-price centered).
-2. Fixed spread for symmetric strategy: Only depends on gamma and k.
+2. Fixed spread for symmetric strategy: Inventory strategy unchanged, but the spread of the symmetric strategy is fixed,which only depends on gamma and k.
+
 Result: The fixed-spread approach yields results more consistent with the paper.
 
 ![figure](https://github.com/user-attachments/assets/5fdd9c4a-59a8-4284-96dd-298750f310a2)
